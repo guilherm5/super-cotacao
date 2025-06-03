@@ -9,6 +9,6 @@ import (
 
 func User(engine *gin.Engine, db *sql.DB) {
 	engine.POST("/novo-usuario", func(context *gin.Context) {
-		controllers.PostUser(context, db)
+		controllers.ControllerPostUser(context, db)
 	})
 }

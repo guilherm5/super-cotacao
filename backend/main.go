@@ -29,8 +29,9 @@ func main() {
 	}
 
 	routes.User(router, db)
+	routes.Login(router, db)
 
-	if err := router.Run(":8080"); err != nil {
+	if err := router.Run(":6677"); err != nil {
 		log.Println("falha ao iniciar o servidor: ", err)
 	} else {
 		log.Println("servidor rodando na porta 8080")
