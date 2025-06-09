@@ -15,7 +15,7 @@ func GenerateToken(context *gin.Context, db *sql.DB) {
 
 	err := context.ShouldBindJSON(&dataLogin)
 	if err != nil {
-		utils.Logger.Info("Erro ao ler body para iniciar login ", err)
+		utils.Logger.Error("Erro ao ler body para iniciar login ", err)
 		context.JSON(400, gin.H{
 			"erro": "dados inválidos",
 			"code": 400,

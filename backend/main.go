@@ -30,6 +30,8 @@ func main() {
 
 	routes.User(router, db)
 	routes.Login(router, db)
+	routes.Module(router, db)
+	routes.Tree(router, db)
 
 	if err := router.Run(":6677"); err != nil {
 		log.Println("falha ao iniciar o servidor: ", err)

@@ -3,8 +3,8 @@ package services
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 	"os"
+	"strconv"
 	"supercotacao/backend/repository"
 	"supercotacao/backend/utils"
 	"time"
@@ -29,7 +29,7 @@ func CompareAndGenerateToken(input models.User, db *sql.DB) (string, error) {
 	}
 
 	claims := jwt.MapClaims{
-		"user_id":   fmt.Sprintf("%d", user.UserID),
+		"user_id":   strconv.FormatInt(user.UserID, 10),
 		"user_name": user.UserName,
 		"exp":       time.Now().Add(time.Hour).Unix(),
 	}
